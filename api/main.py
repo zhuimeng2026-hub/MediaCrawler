@@ -46,7 +46,7 @@ app = FastAPI(
 # Get webui static files directory
 WEBUI_DIR = os.path.join(os.path.dirname(__file__), "webui")
 
-# CORS configuration - allow frontend dev server access
+# CORS configuration - allow frontend dev server + LAN clients on .20 subnet
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -55,6 +55,7 @@ app.add_middleware(
         "http://127.0.0.1:5173",
         "http://127.0.0.1:3000",
     ],
+    allow_origin_regex=r"http://192\.168\.20\.\d+(:\d+)?",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

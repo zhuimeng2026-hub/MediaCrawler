@@ -66,7 +66,7 @@ CDP_DEBUG_PORT = 9222
 # 默认 "localhost"（本机），跨机器远程调试请设置为目标机器 IP，如 "192.168.20.173"
 # 注意：Chrome 默认仅监听 loopback，需在远程机器以 --remote-debugging-address=0.0.0.0 启动，
 # 并放行 9222 端口的入站防火墙。
-CDP_HOST = "192.168.20.173"
+CDP_HOST = "localhost"
 
 # 自定义浏览器路径（可选）
 # 如果为空，系统会自动检测 Chrome/Edge 的安装路径
